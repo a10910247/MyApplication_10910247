@@ -23,11 +23,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         //setContentView(R.layout.activity_main)
 
+
+
         binding.button.setOnClickListener {
             Intent (this,location::class.java);
             startActivity(intent)
         }
 
+        binding.button2.setOnClickListener {
+            Intent (this,lightsensor::class.java);
+            startActivity(intent)
+        }
+
+        binding.button3.setOnClickListener {
+            Intent (this,Gsensor::class.java);
+            startActivity(intent)
+        }
 
 
 
