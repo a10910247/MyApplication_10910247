@@ -1,6 +1,7 @@
 package com.example.myapplication_10910247
 
 import android.content.Intent
+import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,4 +52,10 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onPause() {
+        super.onPause()
+
+    }
+
 }

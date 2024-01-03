@@ -17,10 +17,10 @@ class lightsensor : AppCompatActivity() {
 
         val startServiceButton: Button = findViewById(R.id.light)
         startServiceButton.setOnClickListener {
-            val serviceIntent= Intent (this,myservice::class.java);
+            val serviceIntent = Intent(this, myservice::class.java);
             startService(serviceIntent)
-
-        val startActivityButton: Button=findViewById(R.id.back123)
+        }
+        val startActivityButton:Button=findViewById(R.id.back123)
             startActivityButton.setOnClickListener {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -35,4 +35,3 @@ class lightsensor : AppCompatActivity() {
 
 
     }
-}
