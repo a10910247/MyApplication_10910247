@@ -10,6 +10,7 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.IBinder
+import androidx.core.app.NotificationCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -20,7 +21,7 @@ class myservice : Service(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
     private lateinit var lightsensor: Sensor
 
-    override fun onBind(intent: Intent): IBinder {
+    override fun onBind(p0: Intent?): IBinder? {
         return null
 
     }
@@ -41,6 +42,17 @@ class myservice : Service(), SensorEventListener {
     private fun makeMotify(s: String) {
         val notifyManager=getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val channel = NotificationChannel("mCounter","Channel Counter,",NotificationManager.IMPORTANCE_HIGH)
+        notifyManager.createNotificationChannel(channel)
+        val myBuilder=NotificationCompat.Builder(this,"mCounter").apply {
+            setContentTitle("通知!!")
+            setContentText("這是一個光感測器\n請 $s 注意")
+            setSubText("光感測器")
+            setWhen(System.currentTimeMillis())
+            setChannelId("mCounter")
+            setSmallIcon(R.drawable.Library)
+
+        }
+        notifyManager.notify(1,myBuilder.build())
 
     }
 
