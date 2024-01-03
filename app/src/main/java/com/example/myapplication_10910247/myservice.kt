@@ -49,7 +49,7 @@ class myservice : Service(), SensorEventListener {
             setSubText("光感測器")
             setWhen(System.currentTimeMillis())
             setChannelId("mCounter")
-            setSmallIcon(R.drawable.Library)
+            setSmallIcon(R.drawable.library)
 
         }
         notifyManager.notify(1,myBuilder.build())
@@ -68,7 +68,7 @@ class myservice : Service(), SensorEventListener {
                     setSubText("光感測器")
                     setWhen(System.currentTimeMillis()-100)
                     setChannelId("mCounter")
-                    setSmallIcon(R.drawable.Library)
+                    setSmallIcon(R.drawable.library)
 
                 }
                 notifyManager.notify(1,myBuilder.build())
@@ -78,5 +78,10 @@ class myservice : Service(), SensorEventListener {
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
         //TODO("Not yet implemented")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        sensorManager.unregisterListener(this)
     }
 }

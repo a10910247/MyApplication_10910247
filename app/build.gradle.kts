@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.myapplication_10910247"
-    compileSdk = 33
+    compileSdk = 34
 
     buildFeatures {
         viewBinding=true
