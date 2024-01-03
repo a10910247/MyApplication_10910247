@@ -58,7 +58,22 @@ class myservice : Service(), SensorEventListener {
 
 
     override fun onSensorChanged(p0: SensorEvent?) {
-        //TODO("Not yet implemented")
+        if (p0 !=null){
+            if (p0.values[0]>=20000){
+                val notifyManager=getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                val  channel = NotificationChannel("mCounter","Channel Counter",NotificationManager.IMPORTANCE_HIGH)
+                val myBuilder=NotificationCompat.Builder(this,"mCounter").apply {
+                    setContentTitle("感光通知!!")
+                    setContentText("光線太強 ${p0.values[0]}\n 請注意!")
+                    setSubText("光感測器")
+                    setWhen(System.currentTimeMillis()-100)
+                    setChannelId("mCounter")
+                    setSmallIcon(R.drawable.Library)
+
+                }
+                notifyManager.notify(1,myBuilder.build())
+            }
+        }
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
