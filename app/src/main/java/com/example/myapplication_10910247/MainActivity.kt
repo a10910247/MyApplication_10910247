@@ -26,17 +26,26 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.button.setOnClickListener {
-            Intent (this,location::class.java);
+           Intent (this,location::class.java);
             startActivity(intent)
         }
 
-        binding.button2.setOnClickListener {
-            Intent (this,lightsensor::class.java);
+        /*val startServiceButton: Button = findViewById(R.id.button2)
+        startServiceButton.setOnClickListener {
+            val serviceIntent=Intent (this,myservice::class.java);
+            startService(serviceIntent)
+        }*/
+
+
+       binding .button2.setOnClickListener {
+            val intent = Intent(this, lightsensor::class.java)
             startActivity(intent)
         }
+
+
 
         binding.button3.setOnClickListener {
-            Intent (this,Gsensor::class.java);
+           Intent (this,Gsensor::class.java);
             startActivity(intent)
         }
 

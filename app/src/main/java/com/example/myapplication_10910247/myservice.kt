@@ -9,6 +9,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.os.Bundle
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import kotlinx.coroutines.CoroutineScope
@@ -20,6 +21,10 @@ class myservice : Service(), SensorEventListener {
 
     private lateinit var sensorManager: SensorManager
     private lateinit var lightsensor: Sensor
+
+
+
+
 
     override fun onBind(p0: Intent?): IBinder? {
         return null

@@ -25,9 +25,7 @@
         <activity
             android:name=".Gsensor"
             android:exported="false" />
-        <activity
-            android:name=".lightsensor"
-            android:exported="false" />
+
         <activity
             android:name=".location"
             android:exported="false" />
@@ -40,6 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".lightsensor"
+            android:exported="false" />
     </application>
 
 </manifest>
