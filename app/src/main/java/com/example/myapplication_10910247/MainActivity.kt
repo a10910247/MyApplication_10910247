@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button:Button
     private lateinit var button2:Button
     private lateinit var button3:Button
+    private lateinit var light:Button
+    private lateinit var back123:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,11 +32,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        /*val startServiceButton: Button = findViewById(R.id.button2)
-        startServiceButton.setOnClickListener {
-            val serviceIntent=Intent (this,myservice::class.java);
-            startService(serviceIntent)
-        }*/
+
 
 
        binding .button2.setOnClickListener {
